@@ -70,9 +70,16 @@ class LinkedList {
     public String toString() {
         Node n = this.root;
         String s = "";
+        int[] values = new int[length()];
+        int cnt = 0;
         while(n != null) {
-            s += n.value + " ";
+            values[cnt] = n.value;
             n = n.next;
+            cnt+=1;
+        }
+
+        for (int i = values.length-1;i>=0;i--){
+            s+=values[i]+" ";
         }
         return s;
     }
